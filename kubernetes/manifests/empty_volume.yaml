@@ -1,31 +1,31 @@
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: volume-pod
-# spec:
-#   containers:
-#   - name: volume-container  
-#     image: alpine 
-#     command: ['sh','-c','sleep 3000']
-#     volumeMounts:
-#     - mountPath: /mnt/demo
-#       name: test-volume
-#   volumes:
-#   - name: test-volume
-#     emptyDir: {}
-
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mypod
+  name: volume-pod
 spec:
   containers:
-  - name: mycontainer
-    image: nginx
+  - name: volume-container  
+    image: alpine 
+    command: ['sh','-c','sleep 3000']
     volumeMounts:
-    - mountPath: /mnt/part2
-      name: myvolume
+    - mountPath: /mnt/demo
+      name: test-volume
   volumes:
-  - name: myvolume
+  - name: test-volume
     emptyDir: {}
+
+
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: mypod
+# spec:
+#   containers:
+#   - name: mycontainer
+#     image: nginx
+#     volumeMounts:
+#     - mountPath: /mnt/part2
+#       name: myvolume
+#   volumes:
+#   - name: myvolume
+#     emptyDir: {}
