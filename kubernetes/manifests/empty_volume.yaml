@@ -24,7 +24,7 @@ spec:
   - name: mycontainer
     image: nginx
     volumeMounts:
-    - mountPath: /mnt/vol
+    - mountPath: /mnt/part2
       name: myvolume
   volumes:
   - name: myvolume
