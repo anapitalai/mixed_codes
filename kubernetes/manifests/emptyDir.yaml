@@ -15,17 +15,17 @@ spec:
     emptyDir: {}
 
 
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod
-spec:
-  containers:
-  - name: mycontainer
-    image: nginx
-    volumeMounts:
-    - mountPath: /mnt/vol
-      name: myvolume
-  volumes:
-  - name: myvolume
-    emptyDir: {}
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: mypod
+# spec:
+#   containers:
+#   - name: mycontainer
+#     image: nginx
+#     volumeMounts:
+#     - mountPath: /mnt/vol
+#       name: myvolume
+#   volumes:
+#   - name: myvolume
+#     emptyDir: {}
