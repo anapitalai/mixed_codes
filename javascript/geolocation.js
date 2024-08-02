@@ -18,3 +18,8 @@ navigator.geolocation.getCurrentPosition(
     options
 )
 
+// alternate code
+navigator.geolocation.getCurrentPosition(pos => {
+    
+    console.log(pos.coords)
+})
