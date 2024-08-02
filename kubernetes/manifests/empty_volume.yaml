@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: emptydir-pod
+  name: volume-pod
 spec:
   containers:
-  - name: emptydir-container  
+  - name: volume-container  
     image: alpine 
     command: ['sh','-c','sleep 3000']
     volumeMounts:
