@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hp-pod-ubuntu
+  namespace: volume-trial ##this needs to be created first
+spec:
+  containers:
+    - name: hp-container
+      image: ubuntu:23.10 ##alpine
+      command: ["sh", "-c", "sleep 3000"]
+      volumeMounts:
+        - mountPath: /demo  ##path in the container
+          name: hp-volume
+  volumes:
+    - name: hp-volume
+      hostPath:
+        path: /data     ##path in the host machine
+        type: DirectoryOrCreate
