@@ -8,24 +8,24 @@ spec:
     image: alpine 
     command: ['sh','-c','sleep 3000']
     volumeMounts:
-    - mountPath: /demo
+    - mountPath: /mnt/demo
       name: test-volume
   volumes:
   - name: test-volume
     emptyDir: {}
 
 
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: mypod
-# spec:
-#   containers:
-#   - name: mycontainer
-#     image: nginx
-#     volumeMounts:
-#     - mountPath: /mnt/vol
-#       name: myvolume
-#   volumes:
-#   - name: myvolume
-#     emptyDir: {}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mycontainer
+    image: nginx
+    volumeMounts:
+    - mountPath: /mnt/vol
+      name: myvolume
+  volumes:
+  - name: myvolume
+    emptyDir: {}
